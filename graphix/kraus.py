@@ -1,4 +1,5 @@
 import numpy as np
+import graphix.exceptions as exc
 
 
 class KrausOp:
@@ -14,7 +15,7 @@ class KrausOp:
     """
 
     def __init__(self, data, qarg):
-        assert isinstance(qarg, int)
+        exc.test_value_is_integer(qarg)
         self.data = np.asarray(data, dtype=complex)
         self.qarg = qarg
 
